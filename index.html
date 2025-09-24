@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Career & Education Advisor</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+  <main class="container">
+    <!-- Header / Topbar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">CEA</div>
+        <div class="title">Career & Education Advisor</div>
+      </div>
+      <div id="userLabel" class="user-label">For Students & Parents</div>
+    </header>
+
+    <!-- Landing / Start -->
+    <section id="startScreen" class="card center">
+      <h1>Start your career journey</h1>
+      <p class="muted">Choose your current level to get personalized stream, career & college suggestions.</p>
+      <div class="level-buttons">
+        <button class="btn primary" data-level="10">I am in / finished 10th</button>
+        <button class="btn secondary" data-level="12">I am in / finished 12th</button>
+      </div>
+      <p class="tiny muted">Mobile-first · Minimal · Professional</p>
+    </section>
+
+    <!-- Quiz (hidden initially) -->
+    <section id="quizScreen" class="card hidden">
+      <div class="quiz-top">
+        <div id="progressWrap">
+          <div id="progressText">Page 1 of 5</div>
+          <div class="progress">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+        <div id="levelBadge" class="badge">Level: 10</div>
+      </div>
+
+      <form id="quizForm" class="quiz-form" autocomplete="off">
+        <!-- Questions inserted by JS -->
+      </form>
+
+      <div class="quiz-nav">
+        <button id="prevBtn" class="btn ghost" disabled>Back</button>
+        <div class="nav-right">
+          <button id="saveProgressBtn" class="btn tiny ghost">Save (not functional)</button>
+          <button id="nextBtn" class="btn primary">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommendation -->
+    <section id="resultScreen" class="card hidden">
+      <h2>Your recommended stream</h2>
+      <div id="resultCard" class="result-card">
+        <!-- Filled by JS -->
+      </div>
+
+      <!-- Career Options -->
+      <div id="careerSection">
+        <h3 class="sub">Suggested Career Paths</h3>
+        <div id="careerList" class="career-list">
+          <!-- Filled dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- College section: will be shown only for level 12 -->
+      <div id="collegeSection" class="">
+        <h3 class="sub">Suggested Government College</h3>
+        <div id="collegeCard" class="college-card">
+          <!-- Filled by JS when applicable -->
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button id="restartBtn" class="btn secondary">Try Again</button>
+        <button id="savePdfBtn" class="btn ghost" disabled>Export PDF (future)</button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer muted">Prototype for hackathon judging • Minimal MVP</footer>
+  </main>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>

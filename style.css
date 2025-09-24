@@ -1,0 +1,145 @@
+:root{
+  --bg: #f8fafb;
+  --card: #ffffff;
+  --muted: #7b8a93;
+  --primary: #006b6b; /* deep teal */
+  --accent: #ff7f50;  /* coral */
+  --success: #2e8b57;
+  --glass: rgba(255,255,255,0.6);
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(25,25,30,0.06);
+  --maxw: 980px;
+  --gap: 18px;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #fbfcfd 0%, var(--bg) 100%);
+  color:#0e1112;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:28px 16px;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:var(--maxw);
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  background:linear-gradient(135deg,var(--primary),#3aa6a6);
+  color:white;
+  width:46px;height:46px;border-radius:10px;
+  display:grid;place-items:center;font-weight:700;box-shadow:var(--shadow)
+}
+.title{font-weight:700;font-size:16px}
+.user-label{color:var(--muted);font-size:13px}
+
+/* Card */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+}
+.center{text-align:center}
+.muted{color:var(--muted)}
+.tiny{font-size:12px;color:var(--muted)}
+
+/* Start screen */
+.level-buttons{display:flex;gap:12px;justify-content:center;margin-top:16px}
+.btn{
+  border:0;padding:12px 18px;border-radius:12px;font-weight:600;cursor:pointer;
+  box-shadow:none;
+}
+.btn.primary{background:var(--primary);color:white}
+.btn.secondary{background:white;color:var(--primary);border:1px solid rgba(0,0,0,0.06)}
+.btn.ghost{background:transparent;border:1px solid rgba(0,0,0,0.06)}
+.btn.tiny{padding:8px 12px;font-size:13px}
+
+/* Quiz top */
+.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px}
+.progress{width:220px;height:10px;background:#eef3f4;border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--primary),#43b3b3);transition:width .35s ease}
+
+/* Badge */
+.badge{background:linear-gradient(90deg,#fff,rgba(0,0,0,0.02));padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04);font-weight:600}
+
+/* Quiz form - questions */
+.quiz-form{display:grid;gap:14px}
+.question{
+  padding:14px;border-radius:12px;background:linear-gradient(180deg,#ffffff, #fbffff);border:1px solid rgba(0,0,0,0.03);
+  display:flex;flex-direction:column;gap:10px;
+}
+.q-title{font-weight:700}
+.options{display:flex;flex-direction:column;gap:8px}
+.option{
+  padding:10px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);cursor:pointer;user-select:none;
+}
+.option.selected{border-color:var(--primary);background:linear-gradient(90deg,rgba(0,107,107,0.08),rgba(67,179,179,0.03))}
+
+/* nav */
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.nav-right{display:flex;gap:10px;align-items:center}
+
+/* Result */
+.result-card{padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);display:flex;gap:12px;align-items:center;background:linear-gradient(180deg,#fff,#fbfffd)}
+.result-icon{width:72px;height:72px;border-radius:12px;display:grid;place-items:center;font-size:28px;font-weight:700}
+.result-content{flex:1}
+.result-title{font-weight:800;font-size:18px}
+.result-desc{color:var(--muted);margin-top:6px}
+
+/* College card */
+.college-card{padding:14px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);background:linear-gradient(180deg,#fff,#fffaf6);display:flex;gap:12px;align-items:flex-start}
+.colge-left{width:64px;height:64px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ffb089);display:grid;place-items:center;color:white;font-weight:800}
+.college-content{flex:1}
+.small{font-size:13px;color:var(--muted)}
+
+/* Footer */
+.footer{color:var(--muted);text-align:center;margin-top:12px}
+
+/* Hidden */
+.hidden{display:none}
+
+/* Responsive */
+@media (min-width:900px){
+  .card{padding:26px}
+  .quiz-form{grid-template-columns:1fr 1fr;gap:16px}
+  .question{min-height:140px}
+  .result-card{align-items:center}
+}
+@media (max-width:899px){
+  .quiz-form{grid-template-columns:1fr}
+  .level-buttons{flex-direction:column}
+  .brand .title{display:none}
+}
+
+/* --- Career Options --- */
+.career-list {
+  margin: 10px 0 0;
+  padding-left: 20px;
+  list-style: disc;
+  color: #333;
+}
+.career-list li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
